@@ -12,5 +12,5 @@
 var Example = window.Example || {};
 
 (function () {
-
+    var ext, foo, bar;
 }) ();

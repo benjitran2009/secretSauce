@@ -7,12 +7,20 @@
     <script src="../modules/lazy.js"></script>
 </head>
 <body>
-    <img lsrc="https://placehold.co/600x400?text=High" src="https://placehold.co/600x400?text=Low">
+    <img
+        lsrc="https://placehold.co/600x400?text=High"
+        lpriority="0"
+        lintergrity="sha512-9Yk8M6qN3nnR8Au4NUpCkCUuDxnxYNoa739CvR5FA8G71saa3MSPNhQdIOUncpOO4V1/mW/lfnRmDvtfxXhdIA=="
+        src="https://placehold.co/600x400?text=Low"
+    >
     <script lsrc="../modules/analytics.js"></script>
     <config style="display:none;" type="application/json">
         {
             "developmentModeDoNotEnableOrYouAreFired": true,
             "developmentModeCfg": [0,1,0,1,0,1,1,0],
+            "devleopmentModeDisableAnalyticsTestMode": true,
+            "developmentModeDisableCrcChecksumEtcCheck": true,
+            "developmentModeAnalyticsServer": "localhost:6999",
         }
     </config>
     ii

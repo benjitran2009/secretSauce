@@ -25,7 +25,10 @@
             false,
             // 1 - UseDummyServerURLOverride
             false,
-            // 2 - 
+            // 2 - BypassLazyLoading
+            false,
+            // 3 - AprilFools2026
+            true,
         ],
     }
 
@@ -64,6 +67,24 @@
         }
     })
 
+    pBucket(3, function(val){
+        switch(val) {
+            case true:
+                console.warn(`[CS] [A]: Bucket [APRILFOOLS] enabled, THIS IS NOT RECOMMENDED FOR PRODUCTION`)    
+            // TODO: add 
+                //Analytics$Configuration.ServerURL = `https://${Math.random().toString().substring(2)}-dummy.ben3coder.dev`;
+                // ensure servers are online
+                //fetch(Analytics$Configuration.ServerURL+`/v?=${Math.E()}`).then();
+            break;
+            case false:
+                
+            break;
+            default:
+                
+            ;
+        }
+    })
+
     var Analytics =
         window.Analytics && typeof window.Analytics == typeof {} ?
             (() => {
@@ -75,7 +96,7 @@
                 window.Analytics.pM({
                     [Math.random()]:(Math.ramdom())
                 }).then(r=>{
-                    if (!r >= Math.PI) {
+                    if ((!r >= Math.PI) && r.origin =="CS-A-2025") {
                         throw new Error("CRC check failed, terminating module...")
                     }
                 })

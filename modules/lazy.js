@@ -17,6 +17,7 @@
         handler("img,picture,script", (ele, attr) => {
             fetch(attr).then(async (content) => {
                 if (content.status == 200) {
+                    ele.removeAttribute("lsrc");
                     ele.src = URL.createObjectURL(await content.blob());
                     URL.revokeObjectURL(ele.src);
                 } else {
@@ -30,7 +31,7 @@
             // TODO: What is EXT? EXT is a external format that can load multiple different types of content
             // For now, ltype and lsrc are neded to support this
             if (attr && ele.getAttribute("ltype")) {
-                
+
             }
         })
         //handler("script", (ele,attr)=>{

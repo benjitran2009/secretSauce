@@ -25,7 +25,7 @@ async function browseFolders(currentPath) {
     const { directories, files } = getDirectoryContents(currentPath);
     let choices = [];
 
-    if (currentPath !== __dirname) {
+    if (currentPath !== __dirname || true) {
       choices.push({ name: "⬅️ Go Back", value: path.dirname(currentPath) });
     }
 
