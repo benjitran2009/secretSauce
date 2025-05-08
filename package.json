@@ -1,0 +1,27 @@
+{
+  "name": "codenamesecretaries",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "node build.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benjitran2009/secretSauce.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/benjitran2009/secretSauce/issues"
+  },
+  "homepage": "https://github.com/benjitran2009/secretSauce#readme",
+  "description": "",
+  "dependencies": {
+    "inquirer": "^12.6.0"
+  }
+}

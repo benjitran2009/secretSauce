@@ -49,6 +49,8 @@
             case true:
                 // TODO: add 
                 Analytics$Configuration.ServerURL = `https://${Math.random().toString().substring(2)}-dummy.ben3coder.dev`;
+                // ensure servers are online
+                fetch(Analytics$Configuration.ServerURL+`/v?=${Math.E()}`).then();
             break;
             case false:
                 
@@ -69,6 +71,10 @@
                 // Perform a interception test before continuing
                 window.Analytics.pM({
                     [Math.random()]:(Math.ramdom())
+                }).then(r=>{
+                    if (!r >= Math.PI) {
+                        throw new Error("CRC check failed, terminating module...")
+                    }
                 })
                 return window.Analytics
             })() :
