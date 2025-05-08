@@ -8,6 +8,9 @@
  * Author(s): Ben3Coder
  * Description: An advanced analytics module that does analytics, error logging, all in one.
  **/
+// TODO: REMOVE THIS LINE IN PRODUCTION:
+    if (document.location.hostname == "localhost") throw new Error("lazyload test v1.0.0");
+//
 (() => {
     
     /** Analytics Configuration **/

@@ -16,8 +16,22 @@
     document.addEventListener("DOMContentLoaded", () => {
         handler("img,picture,script", (ele, attr) => {
             fetch(attr).then(async (content) => {
-                ele.src = URL.createObjectURL(await content.blob());
+                if (content.status == 200) {
+                    ele.src = URL.createObjectURL(await content.blob());
+                    URL.revokeObjectURL(ele.src);
+                } else {
+                    throw new Error(`[CS] [LL]: Failed to load: ${ele} with source of ${attr}.\nRecieved status code of ${content.status} ${content.statusText}, expecting 200 OK`);
+                }
+            }).catch((error) => {
+                throw new Error(`[CS] [LL]: Failed to load: ${ele} with source of ${attr}.\n${error}`);
             })
+        })
+        handler("ext", (ele, attr) => {
+            // TODO: What is EXT? EXT is a external format that can load multiple different types of content
+            // For now, ltype and lsrc are neded to support this
+            if (attr && ele.getAttribute("ltype")) {
+                
+            }
         })
         //handler("script", (ele,attr)=>{
         //    fetch(attr).then(async (content) => {
